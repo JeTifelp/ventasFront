@@ -1,0 +1,80 @@
+<div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded" >
+    <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal"  >Crear</button>
+    <table id="tablaArticulos" class="table mt-2 table-bordered table-striped">
+        <thead>
+            <tr class="text-center">
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PRIORITY</th>
+                <th>DESCRIPTION</th>     
+                <th>OPCIONES</th>     
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let pro of projectsList" >
+                <th scope="row">{{pro.id}}</th>
+                <td>{{pro.name}}</td>
+                <td>{{pro.priority}}</td>
+                <td>{{pro.description}}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="editProject(pro.id)">Edit</button>
+                    <button class="btn btn-danger" (click)="deleteProject(pro.id)">Delete</button>
+                </td>
+              </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+ <div class="form-group col-lg-2 col-md-12 col-sm-12">
+    <select class="form-control" [(ngModel)]="selectedCountry.id"
+    (change)="onSelect($event.target)">
+        <option  *ngFor="let country of countries" value="{{country.id}}">
+            {{country.name}}
+        </option>
+    </select>
+ </div>   
+
+<br>
+<div  class="form-group col-lg-4 col-md-12 col-sm-12" *ngIf="cities.length > 0">
+    <select  class="form-control" [(ngModel)]="optcities">
+        <option *ngFor="let city of cities" value="{{city.id}}">
+            {{city.name}}
+        </option>
+    </select>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12">
+    <hr>
+    <div class="row">
+        <div class="border border-primary col-lg-8 col-md-12 col-sm-12">
+            <div class="form-group ">
+                <label for="col-form-label">Tipo de Anestesia</label>
+                <ul class="mt-10 m-l-10 row">
+                    <li *ngFor="let item of ANESTHESIA_LIST; let i=index;" class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="border-checkout-section">
+                            <div class="border-checkout-group border-checkout-group-primary">
+                                <input class="border-checkout" type="checkbox" [(ngModel)]="item.isAssing"
+                                 (ngModalChange)="item.isAssing == !item.isAssing;"> 
+                                <label for="">{{item.name}}</label>   
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <button class="btn btn-success btn-block mt-2" (click)="save()">
+        SAVE
+    </button>
+</div>
+<div class="border mt-2">
+    dss
+</div>
