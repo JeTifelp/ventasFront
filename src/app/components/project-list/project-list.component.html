@@ -12,7 +12,7 @@
         </thead>
         <tbody>
 
-            <tr *ngFor="let pro of projectsList" >
+            <tr *ngFor="let pro of projectsList; let i=index;" >
                 <th scope="row">{{pro.id}}</th>
                 <td>{{pro.name}}</td>
                 <td>{{pro.priority}}</td>

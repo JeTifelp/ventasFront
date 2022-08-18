@@ -56,7 +56,7 @@ export class ProjectListComponent implements OnInit {
       res=>{
         this.projectsList= res;
   
-        console.log(res);
+       // console.log(res);
       },
       err=> console.log(err)
     );

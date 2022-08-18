@@ -31,7 +31,7 @@ proy: Project={
     delete this.proy.id;
     this.projectsService.saveProject(this.proy).subscribe(
       res=>{
-        console.log(res);
+        //console.log(res);
         this.router.navigate(['/projects']);
       },
       err=> console.error(err)

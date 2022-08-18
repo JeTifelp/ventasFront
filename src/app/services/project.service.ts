@@ -17,54 +17,18 @@ export class ProjectService {
   //http://localhost:4000/projects
 
 private countries:CountryI[]=[
-  {
-    id:1,
-    name:'Brasil'
-  },
-  {
-    id:2,
-    name:'España'
-  },
-  {
-    id:3,
-    name:'Panama'
-  },
-  {
-    id:4,
-    name:'Chile'
-  }
+  {    id:1,    name:'Brasil'  },
+  {    id:2,    name:'España'  },
+  {    id:3,    name:'Panama'  },
+  {    id:4,    name:'Chile'  }
 ];
 private cities: CityI[]=[
-  {
-    id:1,
-    countryId:1,
-    name:'Sao Paulo'
-  },
-  {
-    id:2,
-    countryId:1,
-    name:'Brasilia'
-  },
-  {
-    id:3,
-    countryId:2,
-    name:'Barcelona'
-  },
-  {
-    id:4,
-    countryId:2,
-    name:'Madrid'
-  },
-  {
-    id:5,
-    countryId:3,
-    name:'Pan a ma'
-  },
-  {
-    id:6,
-    countryId:4,
-    name:'Iquique'
-  },
+  {    id:1,    countryId:1,    name:'Sao Paulo'  },
+  {    id:2,    countryId:1,    name:'Brasilia'  },
+  {    id:3,    countryId:2,    name:'Barcelona'  },
+  {    id:4,    countryId:2,    name:'Madrid'  },
+  {    id:5,    countryId:3,    name:'Pan a ma'  },
+  {    id:6,    countryId:4,    name:'Iquique'  },
 ];
 
 

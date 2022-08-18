@@ -1,0 +1,59 @@
+<p>Lista de Tareas</p>
+<div class="container mt-4 shadow-lg p-3 mb-5 bg-body rounded" >
+  <div class="row">
+    <div class="form-group">    
+      <input type="text" class="form-control" name="filterPost" [(ngModel)]="filterPost" placeholder="Search of Name">    
+    </div>
+
+    <div class="form-group">    
+    <form action="">
+        <button class="btn btn-primary btn-block" (click)="save()" >
+          SAVE
+        </button> 
+    </form> 
+    </div>
+  </div>
+<table  class="table mt-2 table-bordered table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Done</th>
+        <th scope="col">projectID</th>
+        <th scope="col">
+          <input type="checkbox" [checked]="isCheckAll()" (change)="checkAll($event.target)">
+        </th>
+        <th> almuerzo</th>
+        <th>merienda</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tasksList; let i=index;">
+        <!-- <tr *ngFor="let item of tasksList; let i=index; | filterName: filterPost"></tr> -->
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.done}}</td>
+        <td>{{item.projectId}}</td>
+        <td>
+          <input type="checkbox" name="" [checked]="isCheckAllfila(i)" [(ngModel)]="item.checked" (change)="checkAlmuezo($event.target, i)">
+        </td>
+        <td>
+          <input type="checkbox" name="" [(ngModel)]="item.checked2" id="">
+        </td>
+        <td>
+          <input type="checkbox" name="" [(ngModel)]="item.checked3" id="">
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+<app-task-form 
+[personas]="personas"
+(persona2)="agregarPersonas($event)"
+></app-task-form>
+
+<div>
+  <label for="">Fecha : </label>
+  {{fecha | date:'MMMM dd, yyyy'}}
+</div>

@@ -1,0 +1,43 @@
+
+
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <form (ngSubmit)="agregar()"> <!-- (ngSubmit)  es para que no recargue la pagina, import fromModule en modulo -->
+                <div class="form-group">
+                    Name: 
+                    <input type="text" name="name" placeholder="name" [(ngModel)]="task.name">
+                </div>
+                
+                <div class="form-group">
+                    Done: 
+                    <input type="text" name="done" placeholder="done" [(ngModel)]="task.done">
+                </div>            
+                <div class="from-group col-lg-2 col-md-12 col-sm-12">
+                    ProjectID: 
+                    <select class="from-control" [(ngModel)]="selectedProject.id">
+                        <option *ngFor="let item of projects" value="{{item.id}}">
+                            {{item.name}}
+                        </option>
+                    </select>
+            
+                </div>
+                <button type="submit">
+                    save
+                </button>
+                
+            </form>
+        </div>
+    </div>
+
+</div>
+<div>
+    personas en el formulario
+    <hr>
+    <ul>
+        <li *ngFor="let item of personas">
+            {{item.id}} - {{item.name}}
+        </li>
+    </ul>
+    
+</div>
